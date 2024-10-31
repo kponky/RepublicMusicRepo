@@ -7,15 +7,168 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* @font-face {
+  font-family: "BauOT";
+  src: url("/fonts/BauOT-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "BauOT";
+  src: url("/fonts/BauOT-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+} */
+
+
+@font-face {
+  font-family: BauOT;
+  src: url("https://www.republicrecords.com/wp-content/themes/republicrecords2_republicrecords2/assets/font-face/BauOT.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: BauOT;
+  src: url("https://www.republicrecords.com/wp-content/themes/republicrecords2_republicrecords2/assets/font-face/BauOT-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  src: url("https://www.republicrecords.com/wp-content/themes/republicrecords2_republicrecords2/assets/font-face/free-fa-brands-400.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  /**
+    FONTS	
+    Register font family names for body, heading and menu text.
+  */
+  --font-body-family: "BauOT", sans-serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+  --font-body-case: normal;
+
+  --font-heading-family: BauOT, sans-serif;
+  --font-heading-style: normal;
+  --font-heading-weight: 700;
+  --font-heading-case: normal;
+
+  --font-menu-family: BauOT, sans-serif;
+  --font-menu-style: normal;
+  --font-menu-weight: 700;
+  --font-menu-case: uppercase;
+
+  --font-body-scale: 1;
+  --font-heading-scale: 1;
+
+  /**
+    Typescale values
+  */
+  --body-2xl: 2.6875rem;
+  --body-xl: 2rem;
+  --body-lg: 1.5rem;
+  --body-md: 1rem;
+  --body-sm: 0.87rem;
+  --body-xs: 0.756rem;
+  --body-2xs: 0.658rem;
+
+  --heading-5xl: 4.0625rem;
+  --heading-4xl: 3.5rem;
+  --heading-3xl: 2.6875rem;
+  --heading-2xl: 2.3125rem;
+  --heading-xl: 1.5rem;
+  --heading-lg: 1.125rem;
+  --heading-md: 1rem;
+  --heading-sm: 0.87rem;
+
+  /**
+    Grid spacing system.
+  */
+  --space-96: 6rem;
+  --space-88: 5.5rem;
+  --space-80: 5rem;
+  --space-72: 4.5rem;
+  --space-64: 4rem;
+  --space-56: 3.5rem;
+  --space-48: 3rem;
+  --space-40: 2.5rem;
+  --space-32: 2rem;
+  --space-28: 1.75rem;
+  --space-24: 1.5rem;
+  --space-20: 1.25rem;
+  --space-16: 1rem;
+  --space-12: 0.75rem;
+  --space-8: 0.5rem;
+  --space-4: 0.25rem;
+
+  /**
+    Layout.
+  */
+  --page-width: 112.5rem;
+  --header-height: 4rem;
+  --footer-height: 5rem;
+  --sign-up-form-width: 25rem;
+  --size-header-logo: 2.5rem;
+
+  --spacing-sections-desktop: 48px;
+  --spacing-sections-mobile: 24px;
+
+  --grid-desktop-vertical-spacing: 24px;
+  --grid-desktop-horizontal-spacing: 24px;
+  --grid-mobile-vertical-spacing: 8px;
+  --grid-mobile-horizontal-spacing: 8px;
+
+  /**
+    UI Components.
+  */
+  --button-min-height: 3rem;
+  --button-small-min-height: 1.25rem;
+  --button-small-padding: 0.125rem 0.5rem;
+  --button-small-case: uppercase;
+
+  /**
+    Colour scheme.
+  */
+  --color-base-text-1: 255, 255, 255;
+  --color-base-background-1: 17, 17, 17;
+  --gradient-base-background-1: #111;
+
+  --color-base-text-2: 0, 0, 0;
+  --color-base-background-2: 238, 28, 37;
+  --gradient-base-background-2: #ee1c24;
+
+  --color-base-solid-button-labels: 255, 255, 255;
+  --color-base-solid-button: 0, 0, 0;
+  --color-base-outline-button-labels: #fff;
+
+  --color-base-accent-text-1: 255, 255, 255;
+  --color-base-accent-1: 238, 28, 37;
+  --gradient-base-accent-1: #ee1c24;
+
+  --color-base-accent-text-2: 238, 28, 37;
+  --color-base-accent-2: 0, 0, 0;
+  --gradient-base-accent-2: #000;
+
+  --color-text-1: 238, 28, 37;
+  --color-background-1: 0, 0, 0;
+  --gradient-background-3: ;
+
+  --color-alpha: 0.3;
+
+  /**
+    Animation
+  */
+  --duration-short: 200ms;
+  --duration-default: 300ms;
+  --duration-long: 500ms;
 }

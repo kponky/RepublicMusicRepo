@@ -1,0 +1,161 @@
+.artist-card {
+  &:nth-of-type(3n + 1) {
+    transition-delay: 0.1s;
+  }
+
+  .artist-image {
+    padding-bottom: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: #000;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    }
+  }
+  .artist-overlay {
+    transition: 0.3s ease-in-out all;
+  }
+  .artist-name {
+    text-shadow: 0px 3.7531485558px 12.1977329254px rgba(0, 0, 0, 0.2509803922);
+    z-index: 1;
+    text-transform: lowercase;
+    letter-spacing: -0.05em;
+    font-weight: bold;
+  }
+}
+
+.btn-outline {
+  min-width: 140px;
+  width: max-content;
+  height: 40px;
+  padding-inline: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: lowercase;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fedb62;
+  border: 2px solid #fedb62;
+  border-radius: 70px;
+  position: relative;
+  left: -5px;
+  top: -5px;
+  opacity: 1;
+  letter-spacing: -0.05em;
+  z-index: unset;
+  background: #000;
+  transition: all 0.15s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fedb62;
+    transition: all 0.15s ease-in-out;
+    border-radius: 70px;
+    z-index: -1;
+    background: #000;
+  }
+
+  &:hover {
+    left: 0;
+    top: 0;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.btn-solid {
+  min-width: 140px;
+  width: max-content;
+  height: 40px;
+  padding-inline: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: lowercase;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 70px;
+  position: relative;
+  left: -5px;
+  top: -5px;
+  opacity: 1;
+  letter-spacing: -0.05em;
+  z-index: unset;
+  background: #fedb62;
+  transition: all 0.15s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+    transition: all 0.15s ease-in-out;
+    border-radius: 70px;
+    z-index: -1;
+    background: #fedb62;
+  }
+
+  &:hover {
+    left: 0;
+    top: 0;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.video-cursor {
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  z-index: 3;
+  cursor: none;
+  opacity: 0;
+  pointer-events: none;
+
+  .video-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../assets/images/play-btn.svg) center / cover no-repeat;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.main-footer {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../assets/images/subscribe-bg-desktop-2.jpg) top center /
+      cover no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
