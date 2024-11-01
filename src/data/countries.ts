@@ -1,3 +1,8 @@
+interface Country {
+  value: string;
+  name: string;
+}
+
 export const countriesList = [
   "Afghanistan",
   "Albania",

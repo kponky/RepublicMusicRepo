@@ -27,7 +27,7 @@ const Footer = () => {
               </div>
               {/* sign up form */}
               <form className="w-full px-6">
-                <div className="w-full grid grid-cols-2 gap-5">
+                <div className="w-full grid grid-cols-2 gap-5 mb-[.25rem]">
                   {/* Email Input Group */}
                   <div className="col-span-2 lg:col-span-1 flex flex-col space-y-2 w-full">
                     <label
@@ -66,8 +66,11 @@ const Footer = () => {
           placeholder-gray-400/70 transition-all duration-300 
           invalid:border-red-500/50 invalid:hover:border-red-500 placeholder:text-white placeholder:text-base appearance-none"
                       >
+                        <option value="" hidden>
+                          Select...
+                        </option>
                         {countriesList.map((country, i) => (
-                          <option key={i} value={country}>
+                          <option key={i} value={country} className="bg-[#333]">
                             {country}
                           </option>
                         ))}
@@ -76,28 +79,33 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-                <div className="">
+                <div className="text-white mb-[.25rem]">
                   <span>*</span>
-                  <span className="text-lg font-medium text-white tracking-wide l ">
+                  <span className="text-sm font-medium text-white tracking-wide l ">
                     REQUIRED FIELDS
                   </span>
                 </div>
-                <div className="flex gap-3 py-4 font-medium">
-                  <input
-                    type="checkbox"
-                    className="appearance-none h-5 w-5 border-2 border-yellow-500 bg- checked:bg-yellow-500 checked:border-yellow-500 checked:text-yellow-500 focus:ring-0"
-                  />
-                  <p className="text-[#fedb62]">Republic records</p>
+                <div className="flex gap-3 mt-5 mb-3 font-medium relative">
+                  <input type="checkbox" className="input__checkbox" />
+                  <span className="text-primary lowercase mr-5 ml-1">
+                    Republic records
+                  </span>
                 </div>
 
-                <p className="text-white font-bold text-xl">
-                  Emails will be sent by or on behalf of Universal Music Group
-                  2220 Colorado Avenue, Santa Monica, CA 90404 (310) 865-4000.
-                  You may withdraw your consent at any time{" "}
-                  <Link href="/" className="text-[#fedb62]">
-                    Privacy Policy / Do Not Sell My Personal Information
-                  </Link>{" "}
-                </p>
+                <div className="mt-5 mb-2">
+                  <p className="text-white font-bold text-sm leading-[1.3] ">
+                    Emails will be sent by or on behalf of Universal Music Group
+                    2220 Colorado Avenue, Santa Monica, CA 90404 (310) 865-4000.
+                    You may withdraw your consent at any time{" "}
+                    <Link href="/" className="text-primary" target="_blank">
+                      Privacy Policy
+                    </Link>
+                    <span className="mx-1">/</span>
+                    <Link href="/" className="text-primary" target="_blank">
+                      Do Not Sell My Personal Information
+                    </Link>
+                  </p>
+                </div>
 
                 <div className="mx-auto w-[95%] my-10 flex  ">
                   <Link href="/artists" className="mb-[50px] w-fit">
@@ -144,12 +152,28 @@ const Footer = () => {
             </div>
             <hr className="w-full border-r-white border my-10" />
             <div className="mt-3 leading-8">
-              <p className="text-white text-lg font-semibold">
-                Ⓒ Republic Records <br />
-                Privacy Policy <br />
-                Terms & Conditions <br />
-                Do Not Sell My Personal Information
-              </p>
+              <ul className="text-white text-lg font-semibold text-[12px] leading-[1.4]">
+                <li>
+                  <Link href="/" className="text-white transition">
+                    Ⓒ Republic Records
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white transition">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white transition">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className="text-white transition">
+                    Do Not Sell My Personal Information
+                  </Link>
+                </li>
+              </ul>
             </div>
             {/* social icons */}
 
