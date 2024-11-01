@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Button from "../shared/Button";
+import { CgArrowLongLeft, CgArrowLongRight } from "react-icons/cg";
 
 const VideoSection = () => {
   return (
@@ -12,12 +13,12 @@ const VideoSection = () => {
 
         <div>
           {/* arrow buttons */}
-          <div className="relative">
+          <div className="relative pb-4">
             <button className="absolute w-20 h-[22px] text-primary top[-50px] right-[calc(5%+130px)] cursor-pointer">
-              prev
+              <CgArrowLongRight size={60} />
             </button>
             <button className="absolute w-20 h-[22px] text-primary top[-50px] right-[5%] cursor-pointer">
-              next
+              <CgArrowLongLeft size={60}/>
             </button>
           </div>
 
