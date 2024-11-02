@@ -13,217 +13,257 @@ import { countriesList } from "@/data/countries";
 
 const Footer = () => {
   return (
-    <footer className="relative z-[1] bg-black main-footer">
+    <footer className="relative z-[1] bg-black main-footer overflow-hidden">
       <div className="flex flex-col justify-end relative z-[1] h-full">
         <div className="py-[3px] flex justify-center pb-[10px] w-full ">
           {/* footertop */}
-          {/* footer left */}
-          <div className="mt-20 flex items-center justify-end flex-wrap">
-            <div className="flex justify-between w-[80%] max-w-[800px] flex-col flex-nowrap mx-auto mt-[150px] mb-[100px]">
+          <div className="mr-20 flex items-center justify-end flex-wrap">
+            <div className="flex justify-between w-[90%] max-w-[800px] flex-col flex-nowrap mx-auto mt-[150px] mb-[100px]">
               <div className="text-left mb-[30px]">
-                <h2 className="text-[50px] lowercase font-bold text-white ">
+                <h2 className="text-[56px] lowercase font-bold text-white tracking-wider leading-none">
                   sign up for exclusive new artist & music updates!
                 </h2>
               </div>
-              {/* sign up form */}
-              <form className="w-full px-6">
-                <div className="w-full grid grid-cols-2 gap-5 mb-[.25rem]">
-                  {/* Email Input Group */}
-                  <div className="col-span-2 lg:col-span-1 flex flex-col space-y-2 w-full">
-                    <label
-                      htmlFor="email"
-                      className="text-sm font-medium text-yellow-500 tracking-wider uppercase"
-                    >
-                      *Email
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="email"
-                        id="email"
-                        placeholder="Email"
-                        className="w-full py-2 bg-transparent border-b-2 
-          border-yellow-500/50 hover:border-yellow-500 
-          focus:border-yellow-400 outline-none text-white 
-          placeholder-gray-400/70 transition-all duration-300 
-          invalid:border-red-500/50 invalid:hover:border-red-500 placeholder:text-white placeholder:text-base"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Country Select Group */}
-                  <div className="col-span-2 lg:col-span-1 flex flex-col space-y-2 w-full relative">
-                    <label
-                      htmlFor="country"
-                      className="text-sm font-medium text-yellow-500 tracking-wider uppercase"
-                    >
-                      Choose Country
-                    </label>
-                    <div className="input__group">
-                      <select
-                        className="w-full py-2 bg-transparent border-b-2 
-          border-yellow-500/50 hover:border-yellow-500 
-          focus:border-yellow-400 outline-none text-white 
-          placeholder-gray-400/70 transition-all duration-300 
-          invalid:border-red-500/50 invalid:hover:border-red-500 placeholder:text-white placeholder:text-base appearance-none"
+              <div className="max-w-[750px] w-full mx-auto px-4 mb-12 text-lg">
+                {/* sign up form */}
+                <form>
+                  <div className="w-full grid grid-cols-2 gap-5 mb-[.25rem]">
+                    {/* Email Input Group */}
+                    <div className="col-span-2 lg:col-span-1 flex flex-col space-y-2 w-full">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-bold text-primary tracking-wider uppercase"
                       >
-                        <option value="" hidden>
-                          Select...
-                        </option>
-                        {countriesList.map((country, i) => (
-                          <option key={i} value={country} className="bg-[#333]">
-                            {country}
+                        *Email
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="email"
+                          id="email"
+                          placeholder="Email"
+                          className="w-full py-2 bg-transparent border-b-2 
+          border-primary text-white font-normal outline-none placeholder:text-white"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Country Select Group */}
+                    <div className="col-span-2 lg:col-span-1 flex flex-col space-y-2 w-full relative">
+                      <label
+                        htmlFor="country"
+                        className="text-sm font-bold text-primary tracking-wider uppercase"
+                      >
+                        Choose Country
+                      </label>
+                      <div className="input__group">
+                        <select
+                          className="w-full py-2 bg-transparent border-b-2 
+          border-primary text-white font-normal outline-none appearance-none"
+                        >
+                          <option value="" hidden>
+                            Select...
                           </option>
-                        ))}
-                      </select>
-                      <div className="select__arrow"></div>
+                          {countriesList.map((country, i) => (
+                            <option
+                              key={i}
+                              value={country}
+                              className="bg-[#333]"
+                            >
+                              {country}
+                            </option>
+                          ))}
+                        </select>
+                        <div className="select__arrow"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="text-white mb-[.25rem]">
-                  <span>*</span>
-                  <span className="text-sm font-medium text-white tracking-wide l ">
-                    REQUIRED FIELDS
-                  </span>
-                </div>
-                <div className="flex gap-3 mt-5 mb-3 font-medium relative">
-                  <input type="checkbox" className="input__checkbox" />
-                  <span className="text-primary lowercase mr-5 ml-1">
-                    Republic records
-                  </span>
-                </div>
+                  <div className="text-white mb-[.25rem]">
+                    <span>*</span>
+                    <span className="text-sm font-medium text-white tracking-wide l ">
+                      REQUIRED FIELDS
+                    </span>
+                  </div>
+                  <div className="flex gap-3 mt-5 mb-3 font-medium relative">
+                    <input type="checkbox" className="input__checkbox" />
+                    <span className="text-primary lowercase mr-5 ml-1">
+                      Republic records
+                    </span>
+                  </div>
 
-                <div className="mt-5 mb-2">
-                  <p className="text-white font-bold text-sm leading-[1.3] ">
-                    Emails will be sent by or on behalf of Universal Music Group
-                    2220 Colorado Avenue, Santa Monica, CA 90404 (310) 865-4000.
-                    You may withdraw your consent at any time{" "}
-                    <Link href="/" className="text-primary" target="_blank">
-                      Privacy Policy
-                    </Link>
-                    <span className="mx-1">/</span>
-                    <Link href="/" className="text-primary" target="_blank">
-                      Do Not Sell My Personal Information
-                    </Link>
-                  </p>
-                </div>
+                  <div className="mt-5 mb-2">
+                    <p className="text-white font-bold text-sm leading-[1.3] ">
+                      Emails will be sent by or on behalf of Universal Music
+                      Group 2220 Colorado Avenue, Santa Monica, CA 90404 (310)
+                      865-4000. You may withdraw your consent at any time{" "}
+                      <Link href="/" className="text-primary" target="_blank">
+                        Privacy Policy
+                      </Link>
+                      <span className="mx-1">/</span>
+                      <Link href="/" className="text-primary" target="_blank">
+                        Do Not Sell My Personal Information
+                      </Link>
+                    </p>
+                  </div>
 
-                <div className="mx-auto w-[95%] my-10 flex  ">
-                  <Link href="/artists" className="mb-[50px] w-fit">
-                    <Button variant="outline">submit</Button>
-                  </Link>
-                </div>
-              </form>
+                  <div className="my-10 flex  ">
+                    <Button type="submit" variant="outline">
+                      submit
+                    </Button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
 
-          {/* foooter right */}
-          <div className=" w-[22%] flex-col flex-nowrap mx-auto mt-[250px] mb-[90px]">
-            <ul className="flex flex-col py-5 mt-5">
-              <li className="mb-2">
+          {/* marquee */}
+          <div className="absolute left-10 bottom-0 pb-[50px] z-[1] pt-10 ">
+            <div className="animate-marquee">
+              {Array.from({ length: 20 }).map((_, i) => (
                 <Link
-                  href="/artist"
-                  className="text-primary hover:text-white transition text-2xl font-medium mx-4 "
+                  key={i}
+                  href=""
+                  target="_blank"
+                  className="flex relative justify-center w-[70px] minw-[70px] h-20 mx-10 brightness-0 invert-[100]"
                 >
-                  artists
+                  <div
+                    style={{
+                      backgroundImage: `url(https://www.republicrecords.com/files/2022/11/American.png)`,
+                    }}
+                    className="absolute w-full h-full bg-no-repeat bg-center bg-contain"
+                  ></div>
                 </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  href="/videos"
-                  className="text-primary hover:text-white transition text-2xl font-medium mx-4 "
-                >
-                  video
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link
-                  href="/subscribe"
-                  className="text-primary hover:text-white transition text-2xl font-medium mx-4 "
-                >
-                  subscribe
-                </Link>
-              </li>
-            </ul>
-
-            <div className="mx-auto w-[95%] my-10 flex  ">
-              <Link href="/shop" className="mb-[50px] w-fit">
-                <Button variant="solid">shop</Button>
-              </Link>
+              ))}
             </div>
-            <hr className="w-full border-r-white border my-10" />
-            <div className="mt-3 leading-8">
-              <ul className="text-white text-lg font-semibold text-[12px] leading-[1.4]">
-                <li>
+          </div>
+
+          {/* footer bottom */}
+          <div className="flex flex-col justify-center items-start bg-transparent">
+            {/* nav */}
+            <div className="pb-[30px] flex">
+              <ul className="flex flex-col">
+                <li className="flex mr-[0.75rem]">
+                  <Link
+                    href="/artists"
+                    className="text-primary hover:text-white transition text-base lowercase font-bold leading-[1.8]"
+                  >
+                    artists
+                  </Link>
+                </li>
+                <li className="flex mr-[0.75rem]">
+                  <Link
+                    href="/videos"
+                    className="text-primary hover:text-white transition text-base lowercase font-bold leading-[1.8]"
+                  >
+                    video
+                  </Link>
+                </li>
+                <li className="flex mr-[0.75rem]">
+                  <Link
+                    href="/subscribe"
+                    className="text-primary hover:text-white transition text-base lowercase font-bold leading-[1.8]"
+                  >
+                    subscribe
+                  </Link>
+                </li>
+                <li className="flex mr-[0.75rem] order-10">
+                  <Link href="/shop" className="mt-[30px] w-fit">
+                    <Button variant="solid">shop</Button>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="w-full">
+              <ul className="flex flex-col items-start border-t border-white pt-[30px] mt-[.25rem] mb-1 text-white text-[.756rem] font-semibold">
+                <li className="mb-[.25rem]">
                   <Link href="/" className="text-white transition">
                     Ⓒ Republic Records
                   </Link>
                 </li>
-                <li>
+                <li className="mb-[.25rem]">
                   <Link href="/" className="text-white transition">
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                <li className="mb-[.25rem]">
                   <Link href="/" className="text-white transition">
                     Terms & Conditions
                   </Link>
                 </li>
-                <li>
+                <li className="mb-[.25rem] mr-4">
                   <Link href="/" className="text-white transition">
                     Do Not Sell My Personal Information
                   </Link>
                 </li>
               </ul>
             </div>
+
             {/* social icons */}
-
-            <div className="flex items-center justify-between text-white mt-5">
-              <div className="pt-2">
-                <FaYoutube size={25} />
-              </div>
-              <div className="pt-2">
-                <FaInstagram size={25} />
-              </div>
-              <div className="pt-2">
-                <FaXTwitter size={25} />
-              </div>
-              <div className="pt-2">
-                <FaSpotify size={25} />
-              </div>
-              <div className="pt-2">
-                <FaTiktok size={25} />
-              </div>
-              <div className="pt-2">
-                <FaTumblr size={40} />
-              </div>
-              <div className="pt-2">
-                <FaSpotify size={25} />
-              </div>
-            </div>
-          </div>
-
-          {/* marquee */}
-
-          {/* footer bottom */}
-          <div></div>
-        </div>
-
-        <div className="overflow-hidden whitespace-nowrap hover:animate-none cursor-pointer py-20 ">
-          <div className="inline-block animate-marquee text-white font-medium text-lg">
-            <span className="text-xl mr-8"> Album 1 </span>
-            <span className="text-xl mr-8"> Album 2 </span>
-            <span className="text-xl mr-8">Album 3 </span>
-            <span className="text-xl mr-8">Album 4 </span>
-            <span className="text-xl mr-8">Album 5 </span>
-            <span className="text-xl mr-8">Album 6 </span>
-            <span className="text-xl mr-8">Album 6 </span>
-            <span className="text-xl mr-8">Album 7 </span>
-            <span className="text-xl mr-8">Album 8 </span>
-            <span className="text-xl mr-8">Album 9 </span>
-            <span className="text-xl mr-8">Album 10 </span>
-            <span className="text-xl mr-8">Album 11</span>
-            <span className="text-xl mr-8">Album 12</span>
-            <span className="text-xl mr-8">Album 13</span>
+            <ul className="flex items-center text-white mt-5 gap-2">
+              <li className=" transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube size={24} />
+                </Link>
+              </li>
+              <li className=" transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram size={24} />
+                </Link>
+              </li>
+              <li className=" transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaXTwitter size={24} />
+                </Link>
+              </li>
+              <li className=" transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://www.spotify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaSpotify size={24} />
+                </Link>
+              </li>
+              <li className="transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://www.tiktok.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTiktok size={24} />
+                </Link>
+              </li>
+              <li className="transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://www.tumblr.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTumblr size={24} />
+                </Link>
+              </li>
+              <li className=" transition-opacity duration-300 hover:opacity-75">
+                <Link
+                  href="https://www.spotify.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaSpotify size={24} />
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
