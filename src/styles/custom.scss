@@ -15,7 +15,7 @@
   }
 }
 
-.banner_fg{
+.banner_fg {
   padding-bottom: 130px;
   position: absolute;
   display: flex;
@@ -40,7 +40,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background: #000;
-    height: 0;
+    width: 100%;
+    height: 100%;
 
     &::before {
       content: "";
@@ -351,7 +352,7 @@
   }
 
   &:checked::before {
-    border-color: #000; // Change border color to black when checked
+    background: #fedb62;
   }
 }
 
@@ -368,7 +369,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: url(../assets/images/subscribe-bg-desktop-2.jpg) top center /
+    background: url("/images/subscribe-bg-desktop-2.jpg") top center /
       cover no-repeat;
     z-index: -1;
     pointer-events: none;
@@ -392,17 +393,3 @@
 .hover\:animate-none:hover {
   animation: none; // Stop the animation
 }
-
-// .custom-checkbox {
-//   background-color: transparent; /*
-//   border: 2px solid #fedb62; /* Yellow border */
-//   accent-color: #fedb62;
-//   height: 20px;
-//   width: 20px;
-//   border-width: 2px;
-
-//   &:checked {
-//     color: #fedb62;
-//     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-//   }
-// }

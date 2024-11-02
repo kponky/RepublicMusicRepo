@@ -2,7 +2,7 @@ import React from 'react'
 
 const ArtistsPage = () => {
   return (
-    <div>
+    <div className='w-full h-[30vh] '>
       artist page
     </div>
   )
