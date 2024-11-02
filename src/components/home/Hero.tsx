@@ -26,7 +26,7 @@ const Hero = () => {
         {banners.map((item, i) => {
           return (
             <SwiperSlide key={i}>
-              <div>
+              <div className="relative">
                 <div className="banner_bg">
                   <div
                     className="single__banner"
@@ -35,18 +35,24 @@ const Hero = () => {
                     }}
                   ></div>
                 </div>
-                <div className="banner_fg relative z-[1] flex items-center justify-end h-full px-6">
-                  <div className="max-w-[850px] text-right w-full">
-                    <h3 className="text-[145px] lowercase leading-[0.9] -tracking-wider text-white">
-                      {item.title}
-                    </h3>
-                    <p className="w-[80%] text-base leading-6 text-white">
-                      {item.subtitle}
-                    </p>
-                    <div className="flex">
-                      <Link href={item.link} className="ml-auto mt-[30px]">
-                        <Button variant="outline">Listen Now</Button>
-                      </Link>
+                <div className="banner_fg">
+                  <div className="max-w-[850px] text-right w-full relative z-[1] text-white top-0">
+                    <div>
+                      <div className="">
+                        <h3 className="text-[145px] lowercase leading-[0.9] -tracking-wider">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <div>
+                        <p className="w-[80%] text-base ml-auto leading-6">
+                          {item.subtitle}
+                        </p>
+                      </div>
+                      <div className="flex">
+                        <Link href={item.link} className="ml-auto mt-[30px]">
+                          <Button variant="outline">listen now</Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
