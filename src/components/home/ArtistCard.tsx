@@ -19,7 +19,7 @@ const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
         style={{ backgroundImage: `url(${artist.imageUrl})` }}
       ></div>
       {/* overlay */}
-      <div className="artist-overlay flex justify-between w-full h-full z-[1] p-5 absolute top-0 left-0 opacity-0 group-hover:opacity-100 bg-[#aba48b56]">
+      <div className="artist-overlay flex justify-between w-full h-full z-[2] p-5 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
         <div>
           <Link
             href={artist.website}
