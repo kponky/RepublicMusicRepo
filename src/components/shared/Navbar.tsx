@@ -77,13 +77,13 @@ const Navbar = () => {
     // </nav>
 
     <nav
-      className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 
+      className={`fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50 
     ${scrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"}
   `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-primary font-bold text-3xl">
+          <Link href="/" className="text-white font-bold text-3xl">
             Public Records
           </Link>
 
