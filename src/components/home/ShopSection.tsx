@@ -66,6 +66,7 @@ const ShopSection = () => {
           slidesPerView={1} // Show one slide (which contains multiple cards)
           effect={"fade"}
           navigation={false}
+          loop
         >
           {chunkedArticles.map((chunk, index) => (
             <SwiperSlide key={index}>
