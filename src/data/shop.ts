@@ -19,7 +19,7 @@ const articles: Article[] = [
     id: 2,
     title: "Abbey Road (Vinyl)",
     price: "$29.99",
-    imageUrl: "https://example.com/abbey-road-vinyl.png", // Replace with a valid image URL
+    imageUrl: "https://www.republicrecords.com/files/2024/10/wicked-standardlp.png", // Replace with a valid image URL
     link: "#",
   },
   {
@@ -33,7 +33,7 @@ const articles: Article[] = [
     id: 4,
     title: "The Dark Side of the Moon (Vinyl)",
     price: "$39.99",
-    imageUrl: "https://example.com/dark-side-moon-vinyl.png", // Replace with a valid image URL
+    imageUrl: "https://www.republicrecords.com/files/2024/10/faneditioncd.png", // Replace with a valid image URL
     link: "#",
   },
   {
@@ -61,14 +61,14 @@ const articles: Article[] = [
     id: 8,
     title: "Let It Be (Vinyl)",
     price: "$27.99",
-    imageUrl: "https://example.com/let-it-be-vinyl.png", // Replace with a valid image URL
+    imageUrl: "https://www.republicrecords.com/files/2024/10/faneditioncd.png", // Replace with a valid image URL
     link: "#",
   },
   {
     id: 9,
     title: "A Night at the Opera (CD)",
     price: "$16.99",
-    imageUrl: "https://example.com/a-night-at-the-opera-cd.png", // Replace with a valid image URL
+    imageUrl: "https://www.republicrecords.com/files/2024/10/wicked-standardlp.png", // Replace with a valid image URL
     link: "#",
   },
   {
