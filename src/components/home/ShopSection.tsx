@@ -36,7 +36,7 @@ const ShopSection = () => {
   return (
     <section className="pt-[50px]">
       <div className="m-auto w-[95%] block">
-        <h2 className=" text-[160px] lowercase font-bold text-white -tracking-wider leading-none mx-auto w-[90%] translate-y-[55px] z-[2] relative">
+        <h2 className=" text-[160px] lowercase font-bold text-white -tracking-wider leading-none mx-auto w-[90%] translate-y-[55px] z-[2] relative pointer-events-none">
           Shop
         </h2>
       </div>
@@ -66,10 +66,12 @@ const ShopSection = () => {
           slidesPerView={1} // Show one slide (which contains multiple cards)
           effect={"fade"}
           navigation={false}
+          loop
+          className="w-full"
         >
           {chunkedArticles.map((chunk, index) => (
             <SwiperSlide key={index}>
-              <div className="w-full">
+              <div className="w-full relative">
                 {chunk.map((article) => (
                   <article key={article.id} className="article__card">
                     <figure className="relative block">

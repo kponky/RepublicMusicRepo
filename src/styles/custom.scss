@@ -1,3 +1,34 @@
+.banner_bg {
+  padding-bottom: 56.25%;
+  position: relative;
+  filter: brightness(0.7);
+
+  .single__banner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.banner_fg {
+  padding-bottom: 130px;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 100px;
+}
+
 .artist-card {
   &:nth-of-type(3n + 1) {
     transition-delay: 0.1s;
@@ -5,12 +36,12 @@
 
   .artist-image {
     padding-bottom: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
     background: #000;
-    height: 100%;
     width: 100%;
+    height: 100%;
 
     &::before {
       content: "";
@@ -25,6 +56,7 @@
   }
   .artist-overlay {
     transition: 0.3s ease-in-out all;
+    background-image: url("https://www.republicrecords.com/wp-content/themes/republicrecords2_republicrecords2/assets/images/overlay.png");
   }
   .artist-name {
     text-shadow: 0px 3.7531485558px 12.1977329254px rgba(0, 0, 0, 0.2509803922);
@@ -319,7 +351,7 @@
   }
 
   &:checked::before {
-    border-color: #000; // Change border color to black when checked
+    background: #fedb62;
   }
 }
 
@@ -336,7 +368,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: url(../assets/images/subscribe-bg-desktop-2.jpg) top center /
+    background: url("/images/subscribe-bg-desktop-2.jpg") top center /
       cover no-repeat;
     z-index: -1;
     pointer-events: none;
@@ -348,29 +380,55 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 .animate-marquee {
   display: flex;
-  animation: marquee 10s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 20s linear infinite;
+
+  &:hover\:animate-none:hover {
+    animation: none; // Stop the animation
+  }
 }
 
-.hover\:animate-none:hover {
-  animation: none; // Stop the animation
+// loading screen
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
-// .custom-checkbox {
-//   background-color: transparent; /*
-//   border: 2px solid #fedb62; /* Yellow border */
-//   accent-color: #fedb62;
-//   height: 20px;
-//   width: 20px;
-//   border-width: 2px;
+/* Blinking Cursor Animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 
-//   &:checked {
-//     color: #fedb62;
-//     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-//   }
-// }
+/* Styling for the typing text and cursor */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fedb62;
+  animation: typing 1s steps(20, end) forwards;
+}
+
+.cursor {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fedb62;
+  animation: blink 0.5s infinite;
+}
+
