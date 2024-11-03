@@ -395,3 +395,40 @@
   }
 }
 
+// loading screen
+/* Typing Animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Styling for the typing text and cursor */
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fedb62;
+  animation: typing 1s steps(20, end) forwards;
+}
+
+.cursor {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fedb62;
+  animation: blink 0.5s infinite;
+}
+

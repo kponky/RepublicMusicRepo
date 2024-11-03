@@ -1,9 +1,10 @@
 export default function Loading() {
   return (
-    <div className="w-full h-dvh relative z-50 bg-black text-white">
-      <div className="flex items-center justify-center w-full h-full">
-        <h4 className="text-4xl">Loading...</h4>
-      </div>
+    <div className="w-full h-screen bg-black flex flex-col items-center justify-center relative">
+      <h1 className="text-5xl font-bold text-white tracking-wide animate-typing">
+        <span className="typing-text">republic records</span>
+        <span className="cursor">|</span>
+      </h1>
     </div>
   );
 }
