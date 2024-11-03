@@ -105,7 +105,7 @@ const Navbar = () => {
               <li key={i}>
                 <Link
                   href={to}
-                  className="text-primary hover:text-white transition text-2xl font-medium mx-4"
+                  className="text-primary hover:text-white transition text-2xl font-bold mx-4"
                 >
                   {name}
                 </Link>

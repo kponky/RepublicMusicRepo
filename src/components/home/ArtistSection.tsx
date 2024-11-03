@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { artists } from "@/data/artists";
 import Link from "next/link";
 import Button from "../shared/Button";
@@ -7,7 +7,7 @@ import ArtistCard from "./ArtistCard";
 const ArtistSection = () => {
   return (
     <section className="mt-20 block">
-      <div className="z-[1] pointer-events-none relative translate-y-[40px]">
+      <div className="z-[3] pointer-events-none relative translate-y-[40px]">
         <h2 className="text-center text-[160px] lowercase font-bold text-white -tracking-wider leading-[1] m-0">
           artists
         </h2>

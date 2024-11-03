@@ -93,7 +93,7 @@ const Hero = () => {
               <button
                 key={index}
                 className={`w-[18px] h-[18px] block rounded-full border border-white bg-transparent transition-colors duration-300 hover:bg-primary hover:border-primary ${
-                  index === currentSlide ? "bg-primary border-primary" : ""
+                  index === currentSlide ? "!bg-primary !border-primary" : ""
                 }`}
                 onClick={() => handleBulletClick(index)}
               ></button>
