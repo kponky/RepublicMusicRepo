@@ -47,13 +47,13 @@ const ShopSection = () => {
         <div className="relative">
           <button
             onClick={handlePrev}
-            className="absolute w-20 h-[22px] text-primary top-[-50px] right-[calc(5%+130px)] cursor-pointer z-[2]"
+            className="slick-prev "
           >
             prev
           </button>
           <button
             onClick={handleNext}
-            className="absolute w-20 h-[22px] text-primary top-[-50px] right-[5%] cursor-pointer z-[2]"
+            className="slick-next"
           >
             next
           </button>
