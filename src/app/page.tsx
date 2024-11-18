@@ -7,10 +7,10 @@ import React from "react";
 const HomePage = () => {
   return (
     <div className="w-full">
-      {/* <Hero /> */}
-      <div className="mt-[110vh] bg-black z-[2] relative" >
+      <Hero />
+      <div className="mt-[110vh] bg-black z-[2] relative">
         {/* artists section */}
-        {/* <ArtistSection /> */}
+        <ArtistSection />
         {/* videos section */}
         <VideoSection />
         {/* shop section */}

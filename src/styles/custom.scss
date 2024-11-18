@@ -236,6 +236,7 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        color: white;
         transform: translate(-50%, -50%);
         text-indent: -9999px;
         background: url("/play-btn.svg") center / contain no-repeat;
@@ -243,7 +244,6 @@
     }
 
     .__thumb-bg-image {
-      // background-image: url("https://img.youtube.com/vi/U7BQHlUK52A/maxresdefault.jpg");
       padding-bottom: 56.25%;
       background-repeat: no-repeat;
       background-size: cover;
