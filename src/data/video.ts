@@ -12,29 +12,28 @@ const videoArticles: Video[] = [
     title: "Burna Boy - City Boys",
     thumbnailUrl: "https://www.example.com/thumbnail1.jpg",
     link: "https://www.youtube.com/watch?v=example1",
-    imageUrl:
-      "https://www.republicrecords.com/files/2024/10/wicked-picturediscvinyl.png",
+    imageUrl: "https://img.youtube.com/vi/U7BQHlUK52A/maxresdefault.jpg",
   },
   {
     id: 2,
     title: "Ayra Starr - Rhythm & Blues",
     thumbnailUrl: "https://www.example.com/thumbnail2.jpg",
     link: "https://www.youtube.com/watch?v=example2",
-    imageUrl: "https://www.republicrecords.com/files/2024/10/wicked-standardlp.png", // Replace with a valid image URL
+    imageUrl: "https://img.youtube.com/vi/hW433g7_fDI/maxresdefault.jpg", // Replace with a valid image URL
   },
   {
     id: 3,
     title: "Davido - FEEL",
     thumbnailUrl: "https://www.example.com/thumbnail3.jpg",
     link: "https://www.youtube.com/watch?v=example3",
-    imageUrl: "https://www.example.com/image3.jpg",
+    imageUrl: "https://img.youtube.com/vi/k8c6Re3EzZM/maxresdefault.jpg",
   },
   {
     id: 4,
     title: "Drake - Slime You Out ft. SZA",
     thumbnailUrl: "https://www.example.com/thumbnail4.jpg",
     link: "https://www.youtube.com/watch?v=example4",
-    imageUrl: "https://www.example.com/image4.jpg",
+    imageUrl: "https://img.youtube.com/vi/U7BQHlUK52A/maxresdefault.jpg",
   },
   {
     id: 5,

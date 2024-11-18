@@ -37,10 +37,10 @@ const Navbar = () => {
       name: "videos",
       to: "/videos",
     },
-    {
-      name: "shop",
-      to: "/shop",
-    },
+    // {
+    //   name: "shop",
+    //   to: "/shop",
+    // },
     {
       name: "subscribe",
       to: "/subscribe",

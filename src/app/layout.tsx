@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
+import TawkMessenger from "@/components/shared/TawkMessenger";
 
 export const metadata: Metadata = {
   title: "My Music App",
@@ -25,6 +26,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Suspense>
+
+        <TawkMessenger />
       </body>
     </html>
   );
