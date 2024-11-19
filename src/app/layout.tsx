@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="roboto-regular roboto-medium roboto-bold">
+      <body className="roboto-regular roboto-medium roboto-bold bg-black">
         <Suspense fallback={<Loading />}>
           <Navbar />
           <main>{children}</main>

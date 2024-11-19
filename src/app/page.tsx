@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div className="w-full">
       <Hero />
-      <div className="mt-[110vh] bg-black z-[2] relative">
+      <div className="lg:mt-[110vh] bg-black z-[2] relative">
         {/* artists section */}
         <ArtistSection />
         {/* videos section */}

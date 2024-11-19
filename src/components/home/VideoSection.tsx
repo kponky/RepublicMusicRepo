@@ -118,6 +118,12 @@ const VideoSection = () => {
           ))}
         </Swiper>
       </div>
+
+      <div className="mx-auto w-[95%] mt-10 flex justify-end ">
+        <Link href="/videos" className="mb-[50px] w-fit">
+          <Button variant="outline">view all</Button>
+        </Link>
+      </div>
     </section>
   );
 };
