@@ -7,8 +7,8 @@ import ArtistCard from "./ArtistCard";
 const ArtistSection = () => {
   return (
     <section className="mt-20 block">
-      <div className="z-[3] pointer-events-none relative translate-y-[40px]">
-        <h2 className="text-center text-[160px] lowercase font-bold text-white -tracking-wider leading-[1] m-0">
+      <div className="z-[3] pointer-events-none relative translate-y-[20px] lg:translate-y-[40px]">
+        <h2 className="text-center text-[60px] lg:text-[160px] lowercase font-bold text-white -tracking-wider leading-[1] m-0">
           artists
         </h2>
       </div>

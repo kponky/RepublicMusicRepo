@@ -6,7 +6,7 @@ import { fadeInUp } from "@/utils/animationVariants";
 const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
   return (
     <motion.div
-      className="artist-card w-1/4 relative group"
+      className="artist-card lg:w-1/4 w-1/2 relative group"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"

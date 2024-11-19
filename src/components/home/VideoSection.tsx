@@ -47,7 +47,7 @@ const VideoSection = () => {
   return (
     <section className="pt-[50px] ">
       <div className="m-auto w-[95%] block">
-        <h2 className=" text-[160px] lowercase font-bold text-white -tracking-wider leading-none mx-auto w-[90%] translate-y-[55px] z-[2] relative pointer-events-none">
+        <h2 className="text-[60px] lg:text-[160px] lowercase font-bold text-white -tracking-wider leading-none mx-auto w-[90%] lg:translate-y-[55px] z-[2] relative pointer-events-none mb-[10px]">
           Videos
         </h2>
       </div>
