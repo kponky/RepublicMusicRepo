@@ -13,6 +13,16 @@ import {
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = banners.length;
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size to determine layout
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Automatically change slides every 5 seconds
   useEffect(() => {
@@ -28,17 +38,23 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-dvh fixed top-0 left-0 h-full w-full bg-black overflow-hidden ">
-      {banners.map((item, index) => (
-        <div
-          key={index}
-          className="w-full h-full transition-transform duration-700 ease-in-out"
-          style={{
-            transform: `translateY(-${currentSlide * 100}vh)`,
-          }}
-        >
-          <div className="relative w-full h-full">
-            <div className="banner_bg">
+    <section className="min-h-dvh lg:fixed top-0 left-0 h-full w-full bg-black overflow-hidden ">
+      <div
+        className={`w-full h-full flex ${
+          isMobile ? "flex-row" : "flex-col"
+        } transition-transform duration-700 ease-in-out`}
+        style={{
+          transform: isMobile
+            ? `translateX(-${currentSlide * 100}%)`
+            : `translateY(-${currentSlide * 100}vh)`,
+        }}
+      >
+        {banners.map((item, index) => (
+          <div
+            key={index}
+            className="w-full h-full shrink-0 flex-none relative"
+          >
+            <div className="banner_bg h-screen">
               <div
                 className="single__banner"
                 style={{ backgroundImage: `url(${item.imageUrl})` }}
@@ -53,7 +69,7 @@ const Hero = () => {
                     initial="hidden"
                     animate={currentSlide === index ? "visible" : "hidden"}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="text-[145px] lowercase leading-[0.9] -tracking-wider"
+                    className="lg:text-[145px] text-[54px] lowercase leading-[0.9] -tracking-wider"
                   >
                     {item.title}
                   </motion.h3>
@@ -82,9 +98,8 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-      ))}
-
+        ))}
+      </div>
       {/* Custom Pagination */}
       <div className="absolute bottom-10 right-10 flex z-[1] w-full">
         <ul className="ml-auto bg-transparent text-center">

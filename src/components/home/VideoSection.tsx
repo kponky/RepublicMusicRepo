@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Button from "../shared/Button";
 import articles from "@/data/shop";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
@@ -14,7 +14,7 @@ import CustomCursor, { CustomCursorRef } from "../shared/CustomCursor";
 
 const VideoSection = () => {
   const swiperRef = useRef<SwiperRef | null>(null);
-  const cursorRef = useRef<CustomCursorRef | null>(null)
+  const cursorRef = useRef<CustomCursorRef | null>(null);
 
   // Split articles into chunks of 5 for Swiper slides
   const chunkedArticles = [];
@@ -45,15 +45,15 @@ const VideoSection = () => {
   };
 
   return (
-    <section className="pt-[50px]">
+    <section className="pt-[50px] ">
       <div className="m-auto w-[95%] block">
-        <h2 className=" text-[160px] lowercase font-bold text-white -tracking-wider leading-none mx-auto w-[90%] translate-y-[55px] z-[2] relative pointer-events-none">
+        <h2 className="text-[60px] lg:text-[160px] lowercase font-bold text-white -tracking-wider leading-none mx-auto w-[90%] lg:translate-y-[55px] z-[2] relative pointer-events-none mb-[10px]">
           Videos
         </h2>
       </div>
 
       {/* view content */}
-      <div className="w-full mx-auto ">
+      <div className="w-full mx-auto">
         {/* arrow buttons */}
         <div className="relative">
           <button onClick={handlePrev} className="slick-prev ">
@@ -82,7 +82,7 @@ const VideoSection = () => {
                 {chunk.map((videoArticle) => (
                   <article
                     key={videoArticle.id}
-                    className="video-article__card "
+                    className="video-article__card"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -117,6 +117,12 @@ const VideoSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+
+      <div className="mx-auto w-[95%] mt-10 flex justify-end ">
+        <Link href="/videos" className="mb-[50px] w-fit">
+          <Button variant="outline">view all</Button>
+        </Link>
       </div>
     </section>
   );
