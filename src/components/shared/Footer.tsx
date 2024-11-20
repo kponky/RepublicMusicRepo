@@ -165,11 +165,11 @@ const Footer = () => {
                     subscribe
                   </Link>
                 </li>
-                <li className="flex mr-[0.75rem] order-10">
+                {/* <li className="flex mr-[0.75rem] order-10">
                   <Link href="/shop" className="mt-[30px] w-fit">
                     <Button variant="solid">shop</Button>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 
