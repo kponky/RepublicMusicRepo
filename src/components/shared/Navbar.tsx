@@ -50,7 +50,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50 
-    ${scrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"}
+    ${scrolled ? "bg-black/90 backdrop-blur-sm" : "bg-transparent"} ${
+        menuOpen && "!bg-black"
+      }
   `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +73,7 @@ const Navbar = () => {
           <ul
             className={`flex-col md:flex-row flex md:flex items-center p-[10px]  md:items-center absolute md:static left-0 w-full md:w-auto transition-all duration-300 ${
               menuOpen
-                ? "h-screen top-16 gap-10 flex items-center justify-center"
+                ? "h-[calc(100vh-4rem)] top-16 gap-10 flex items-center justify-center"
                 : "top-[-200px]" // this is to Adjust to show/hide the menu
             } md:top-0 bg-black md:bg-transparent`}
           >

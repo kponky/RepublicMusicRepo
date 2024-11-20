@@ -6,7 +6,7 @@ import { fadeInUp } from "@/utils/animationVariants";
 const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
   return (
     <motion.div
-      className="artist-card w-1/4 relative group"
+      className="artist-card lg:w-1/4 w-1/2 relative group"
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
@@ -19,8 +19,8 @@ const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
         style={{ backgroundImage: `url(${artist.imageUrl})` }}
       ></div>
       {/* overlay */}
-      <div className="artist-overlay flex justify-between w-full h-full z-[2] p-5 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
-        <div>
+      <div className="artist-overlay flex flex-col lg:flex-row justify-start lg:justify-between w-full h-full z-[2] p-5 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+        <div className="text-center">
           <Link
             href={artist.website}
             className="text-primary text-base hover:text-white transition-colors duration-300 ease-in-out"
@@ -29,7 +29,7 @@ const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
           </Link>
         </div>
         <div>
-          <ul className="flex items-center gap-2">
+          <ul className="flex items-center justify-center gap-2 mt-[15px] lg:mt-0 ">
             {artist.socialLinks &&
               Object.entries(artist.socialLinks).map(
                 ([key, { link, icon: Icon }]) => (
@@ -46,7 +46,7 @@ const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
           </ul>
         </div>
       </div>
-      <h3 className="text-[40px] absolute bottom-5 left-5 leading-none text-white artist-name">
+      <h3 className="text-[20px] lg:text-[40px] absolute bottom-[10px] lg:bottom-5 lg:left-5 left-[10px] leading-none text-white artist-name">
         {artist.name}
       </h3>
     </motion.div>

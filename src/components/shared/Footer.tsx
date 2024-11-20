@@ -15,12 +15,12 @@ const Footer = () => {
   return (
     <footer className="relative z-[1] bg-black main-footer overflow-hidden">
       <div className="flex flex-col justify-end relative z-[1] h-full">
-        <div className="py-[3px] flex justify-center pb-[10px] w-full ">
+        <div className="py-[3px] flex flex-col lg:flex-row justify-center pb-[25px] lg:pb-[10px] w-full ">
           {/* footertop */}
-          <div className="mr-20 flex items-center justify-end flex-wrap">
-            <div className="flex justify-between w-[90%] max-w-[800px] flex-col flex-nowrap mx-auto mt-[150px] mb-[100px]">
-              <div className="text-left mb-[30px]">
-                <h2 className="text-[56px] lowercase font-bold text-white tracking-wider leading-none">
+          <div className="lg:mr-20 flex items-center justify-end flex-wrap">
+            <div className="flex justify-between w-[95%] lg:w-[90%] max-w-[800px] flex-col flex-nowrap mx-auto mt-[100px] lg:mt-[150px] mb-[50px] lg:mb-[100px]">
+              <div className="text-center lg:text-left mb-[30px]">
+                <h2 className="text-[40px] lg:text-[56px] lowercase font-bold text-white tracking-wider leading-none">
                   sign up for exclusive new artist & music updates!
                 </h2>
               </div>
@@ -90,7 +90,7 @@ const Footer = () => {
                     </span>
                   </div>
 
-                  <div className="mt-5 mb-2">
+                  <div className="mt-5 mb-2 text-center lg:text-left">
                     <p className="text-white font-bold text-sm leading-[1.3] ">
                       Emails will be sent by or on behalf of Universal Music
                       Group 2220 Colorado Avenue, Santa Monica, CA 90404 (310)
@@ -105,7 +105,7 @@ const Footer = () => {
                     </p>
                   </div>
 
-                  <div className="my-10 flex  ">
+                  <div className="my-10 flex justify-center lg:justify-normal">
                     <Button type="submit" variant="outline">
                       submit
                     </Button>
@@ -116,8 +116,8 @@ const Footer = () => {
           </div>
 
           {/* marquee */}
-          <div className="absolute left-10 bottom-0 pb-[50px] z-[1] pt-10 ">
-            <div className="animate-marquee">
+          <div className="relative lg:absolute lg:left-10 lg:bottom-0 pb-10 lg:pb-[50px] z-[1] pt-10 ">
+            <div className="animate-marquee ">
               {Array.from({ length: 20 }).map((_, i) => (
                 <Link
                   key={i}
@@ -137,10 +137,10 @@ const Footer = () => {
           </div>
 
           {/* footer bottom */}
-          <div className="flex flex-col justify-center items-start bg-transparent">
+          <div className="flex flex-col justify-center items-center lg:items-start bg-transparent mt-[50px] lg:mt-0 ">
             {/* nav */}
-            <div className="pb-[30px] flex">
-              <ul className="flex flex-col">
+            <div className="pb-[30px] flex items-center">
+              <ul className="flex flex-col items-center lg:items-start">
                 <li className="flex mr-[0.75rem]">
                   <Link
                     href="/artists"
@@ -173,8 +173,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="w-full">
-              <ul className="flex flex-col items-start border-t border-white pt-[30px] mt-[.25rem] mb-1 text-white text-[.756rem] font-semibold">
+            <div className="lg:w-full">
+              <ul className="flex flex-col items-center lg:items-start border-t border-white pt-[30px] mt-[.25rem] mb-1 text-white text-[.756rem] font-semibold">
                 <li className="mb-[.25rem]">
                   <Link href="/" className="text-white transition">
                     Ⓒ Republic Records
@@ -199,14 +199,14 @@ const Footer = () => {
             </div>
 
             {/* social icons */}
-            <ul className="flex items-center text-white mt-5 gap-2">
+            <ul className="flex items-center text-white mt-5 gap-3 lg:gap-2">
               <li className=" transition-opacity duration-300 hover:opacity-75">
                 <Link
                   href="https://www.youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaYoutube size={24} />
+                  <FaYoutube size={22} />
                 </Link>
               </li>
               <li className=" transition-opacity duration-300 hover:opacity-75">
@@ -215,7 +215,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram size={24} />
+                  <FaInstagram size={22} />
                 </Link>
               </li>
               <li className=" transition-opacity duration-300 hover:opacity-75">
@@ -224,7 +224,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaXTwitter size={24} />
+                  <FaXTwitter size={22} />
                 </Link>
               </li>
               <li className=" transition-opacity duration-300 hover:opacity-75">
@@ -233,7 +233,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaSpotify size={24} />
+                  <FaSpotify size={22} />
                 </Link>
               </li>
               <li className="transition-opacity duration-300 hover:opacity-75">
@@ -242,7 +242,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaTiktok size={24} />
+                  <FaTiktok size={22} />
                 </Link>
               </li>
               <li className="transition-opacity duration-300 hover:opacity-75">
@@ -251,7 +251,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaTumblr size={24} />
+                  <FaTumblr size={22} />
                 </Link>
               </li>
               <li className=" transition-opacity duration-300 hover:opacity-75">
@@ -260,7 +260,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaSpotify size={24} />
+                  <FaSpotify size={22} />
                 </Link>
               </li>
             </ul>
