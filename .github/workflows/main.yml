@@ -23,7 +23,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-       server: 185.146.22.254
+       server: 198.54.125.109
        username: autodeploygithub@republicmanagement.org
        password: 4skqrBiG7+Yh
        local-dir: ./dist/
