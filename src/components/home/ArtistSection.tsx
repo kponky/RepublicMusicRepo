@@ -12,7 +12,8 @@ const ArtistSection = () => {
           artists
         </h2>
       </div>
-      <div className="w-full flex mx-auto flex-row flex-wrap relative">
+      <div className=" grid lg:grid-cols-4  md:grid-cols-3 grid-cols-1  relative">
+      {/* lg:flex mx-auto flex-row flex-wrap */}
         {artists.map((artist, i) => (
           <ArtistCard key={i} artist={artist} index={i} />
         ))}
