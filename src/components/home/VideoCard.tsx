@@ -3,7 +3,7 @@ import React from 'react'
 const VideoCard = () => {
   return (
     <div>
-      video card
+    tis is te video card.. section for the qapplication lt.. 
     </div>
   )
 }
