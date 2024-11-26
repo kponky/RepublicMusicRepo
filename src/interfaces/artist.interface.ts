@@ -5,6 +5,7 @@ export interface Artist {
   name: string;
   website: string;
   imageUrl: string;
+  description: string;
   socialLinks?: Social
 }
 

@@ -14,13 +14,28 @@ const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
       viewport={{ amount: 0.2 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
+      
+      <Link
+        href={`/artists/${artist.name.toLowerCase().replace(/\s+/g, '-')}`} // Use artist name in URL
+        passHref
+        className="w-full h-full block"
+      >
+      
+      
+      
+
       {/* bg image */}
+   
+      
+    
       <div
         className="artist-image"
         style={{ backgroundImage: `url(${artist.imageUrl})` }}
       ></div>
       {/* overlay */}
-      <div className="artist-overlay flex flex-col lg:flex-row justify-start lg:justify-between w-full h-full z-[2] p-5 absolute top-0 left-0 opacity-0 group-hover:opacity-100">
+   
+    
+      <div className="artist-overlay flex flex-col lg:flex-row justify-start lg:justify-between w-full h-full z-[2] p-5 absolute top-0 left-0 opacity-0 group-hover:opacity-100" >
         <div className="text-center">
           <Link
             href={artist.website}
@@ -50,6 +65,9 @@ const ArtistCard = ({ artist, index }: { artist: Artist; index: number }) => {
       <h3 className="text-[20px] lg:text-[40px] absolute bottom-[10px] lg:bottom-5 lg:left-5 left-[10px] leading-none text-white artist-name">
         {artist.name}
       </h3>
+
+      </Link>
+
     </motion.div>
   );
 };
