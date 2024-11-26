@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { artists } from "@/data/artists";
 import Link from "next/link";
 import Button from "../shared/Button";
@@ -12,8 +12,7 @@ const ArtistSection = () => {
           artists
         </h2>
       </div>
-      <div className=" grid lg:grid-cols-4  md:grid-cols-3 grid-cols-1  relative">
-      {/* lg:flex mx-auto flex-row flex-wrap */}
+      <div className="w-full mx-auto flex flex-row flex-wrap relative">
         {artists.map((artist, i) => (
           <ArtistCard key={i} artist={artist} index={i} />
         ))}

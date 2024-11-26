@@ -1,12 +1,6 @@
-interface Video {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-  link: string;
-  imageUrl: string;
-}
+import { IVideo } from "@/interfaces/video.interface";
 
-const videoArticles: Video[] = [
+const videoArticles: IVideo[] = [
   {
     id: 1,
     title: "Burna Boy - City Boys",

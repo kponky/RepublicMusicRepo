@@ -3,10 +3,11 @@ import { IconType } from "react-icons";
 export interface Artist {
   id: number;
   name: string;
+  slug: string;
   website: string;
   imageUrl: string;
   description: string;
-  socialLinks?: Social
+  socialLinks?: Social;
 }
 
 interface Social {

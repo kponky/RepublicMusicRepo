@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { EffectFade, Navigation } from "swiper/modules";
+import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import Button from "../shared/Button";
-import articles from "@/data/shop";
-import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 import videoArticles from "@/data/video";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
 import CustomCursor, { CustomCursorRef } from "../shared/CustomCursor";
 
 const VideoSection = () => {

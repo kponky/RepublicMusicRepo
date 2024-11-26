@@ -230,6 +230,26 @@
 }
 /* Slide styles end */
 
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/swiper/modules/effect-fade.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.swiper-fade.swiper-free-mode .swiper-slide {
+  transition-timing-function: ease-out;
+}
+.swiper-fade .swiper-slide {
+  pointer-events: none;
+  transition-property: opacity;
+}
+.swiper-fade .swiper-slide .swiper-slide {
+  pointer-events: none;
+}
+.swiper-fade .swiper-slide-active {
+  pointer-events: auto;
+}
+.swiper-fade .swiper-slide-active .swiper-slide-active {
+  pointer-events: auto;
+}
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/swiper/modules/navigation.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************/
@@ -319,24 +339,4 @@
   content: 'next';
 }
 /* Navigation font end */
-
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/swiper/modules/effect-fade.css ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************/
-.swiper-fade.swiper-free-mode .swiper-slide {
-  transition-timing-function: ease-out;
-}
-.swiper-fade .swiper-slide {
-  pointer-events: none;
-  transition-property: opacity;
-}
-.swiper-fade .swiper-slide .swiper-slide {
-  pointer-events: none;
-}
-.swiper-fade .swiper-slide-active {
-  pointer-events: auto;
-}
-.swiper-fade .swiper-slide-active .swiper-slide-active {
-  pointer-events: auto;
-}
 

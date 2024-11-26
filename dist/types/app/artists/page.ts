@@ -1,4 +1,4 @@
-// File: C:\Users\HP\Desktop\folder\nextjs-music-app\src\app\artists\page.tsx
+// File: C:\Users\John\Desktop\2024\kponky-projects\RepublicMusicRepo\src\app\artists\page.tsx
 import * as entry from '../../../../src/app/artists/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
