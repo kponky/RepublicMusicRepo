@@ -1,5 +1,12 @@
 import ArtistsGrid from "@/components/artists/ArtistsGrid";
+import { Metadata } from "next";
 import React from "react";
+
+const pageTitle = "Artists";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+};
 
 const ArtistsPage = () => {
   return (

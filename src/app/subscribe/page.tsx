@@ -5,8 +5,7 @@ import React from "react";
 const SubscribePage = () => {
   return (
     <div className="w-full h-10 bg-black">
-      <div className="py-[10px]">
-           </div>
+      <div className="py-[10px]"></div>
     </div>
   );
 };
