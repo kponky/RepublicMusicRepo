@@ -1,9 +1,7 @@
 import { artists } from "@/data/artists";
+import { Artist } from "@/interfaces/artist.interface";
 
-const ArtistDetails = ({ slug }: { slug: string }) => {
-  const artist = artists.find((artist) => artist.slug === slug);
-
-  if (!artist) return <div>Artist not found</div>;
+const ArtistDetails = ({ artist }: { artist: Artist }) => {
 
   return (
     <div className="w-full h-full min-h-screen bg-black text-white p-8">
