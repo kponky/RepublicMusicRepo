@@ -1,4 +1,3 @@
-import { artists } from "@/data/artists";
 import { Artist } from "@/interfaces/artist.interface";
 
 const ArtistDetails = ({ artist }: { artist: Artist }) => {

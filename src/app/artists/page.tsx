@@ -17,7 +17,7 @@ const ArtistsPage = () => {
             artists
           </h2>
         </div>
-
+      
         <ArtistsGrid />
       </div>
     </div>
