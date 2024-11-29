@@ -10,7 +10,13 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
-
+  
+# Check for required files in the dist folder
+    - name: ✅ Verify Required Files
+        run: if [ ! -f ./dist/index.html ] || [ ! -f ./dist/.htaccess ]; then
+  echo "Required files (index.html or .htaccess) are missing in the dist folder!"
+  exit 1
+fi
     - name: Use Node.js 20.x
       uses: actions/setup-node@v3
       with:
