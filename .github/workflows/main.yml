@@ -13,7 +13,7 @@ jobs:
   
     # Step : Check for required files in the dist folder
     - name: ✅ Verify Required Files
-        run: |
+      run: |
           if [ ! -f ./dist/index.html ] || [ ! -f ./dist/.htaccess ]; then
             echo "Required files (index.html or .htaccess) are missing in the dist folder!"
             exit 1
