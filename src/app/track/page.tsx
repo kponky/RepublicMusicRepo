@@ -1,11 +1,13 @@
-import React from 'react'
+import TrackComponent from "@/components/trackSection/TrackComponents";
+import React from "react";
 
-const Track = () => {
+const TrackSection = () => {
   return (
-    <div>
-      this fi for the track page 
+    <div className="min-h-screen bg-transparent flex items-center justify-center">
+       
+      <TrackComponent />
     </div>
-  )
-}
+  );
+};
 
-export default Track
+export default TrackSection;
