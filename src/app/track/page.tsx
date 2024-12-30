@@ -10,11 +10,13 @@ export const metadata: Metadata = {
   title: pageTitle,
 };
 
-type SearchParams = { [key: string]: string | string[] | undefined };
+const TicketDetailsPage = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) => {
+  const { ticketId } = await searchParams;
 
-const TicketDetailsPage = async (props: { searchParams: SearchParams }) => {
-  const searchParams = props.searchParams;
-  const { ticketId } = searchParams;
   const data: ITicket = await getMembership(ticketId as string);
 
   return (
