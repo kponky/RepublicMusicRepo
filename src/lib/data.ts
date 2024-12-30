@@ -6,7 +6,7 @@ export async function getMembership(value: string) {
       `/nellalink/smart-meta-manager/entity/ticketmembership/retrieve-by-meta-key/${value}`
     );
 
-    return res.data.data;
+    return res;
   } catch (error) {
     console.log(error);
   }

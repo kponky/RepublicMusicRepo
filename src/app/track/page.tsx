@@ -1,7 +1,5 @@
 import TicketInfo from "@/components/trackSection/TicketInfo";
 import TicketInput from "@/components/trackSection/TicketInput";
-import { ITicket } from "@/interfaces/track.interface";
-import { getMembership } from "@/lib/data";
 import { Metadata } from "next";
 
 const pageTitle = "Ticket Information";
@@ -10,15 +8,7 @@ export const metadata: Metadata = {
   title: pageTitle,
 };
 
-const TicketDetailsPage = async ({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) => {
-  const { ticketId } = await searchParams;
-
-  const data: ITicket = await getMembership(ticketId as string);
-
+const TicketDetailsPage = () => {
   return (
     <div className="w-full h-full min-h-screen bg-black">
       <div className="py-[100px] lg:py-20">
@@ -30,13 +20,7 @@ const TicketDetailsPage = async ({
           <TicketInput />
         </div>
 
-        {data ? (
-          <TicketInfo data={data} />
-        ) : (
-          <div className="text-white text-center max-w-[800px] mx-auto pb-20">
-            <p>Oops! No details available for this ticket.</p>
-          </div>
-        )}
+        <TicketInfo />
       </div>
     </div>
   );
