@@ -13,7 +13,7 @@ const TicketDetailsPage = () => {
     <div className="w-full h-full min-h-screen bg-black">
       <div className="py-[100px] lg:py-20">
         <h2 className="text-center text-[60px] lg:text-[160px] lowercase font-bold text-white -tracking-wider leading-[1] m-0">
-          Track Membership
+          Track Membership 3
         </h2>
 
         <div className="mb-16">
