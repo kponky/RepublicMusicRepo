@@ -39,7 +39,7 @@ const TicketInput = () => {
         />
 
         <Button variant="solid" onClick={handleSubmit}>
-          Submit button
+          Submit
         </Button>
       </form>
 
