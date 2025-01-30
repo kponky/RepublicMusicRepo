@@ -9,7 +9,7 @@ const VideoCard = ({ video }: { video: IVideo }) => {
         <div className="video-article_card__thumb">
           <div className="video-article_card__thumb-overlay">
             <Link
-              href={video.link}
+              href={video.entity_featured_url}
               target="_blank"
               className="play-button"
               title="Play Video"
@@ -20,13 +20,13 @@ const VideoCard = ({ video }: { video: IVideo }) => {
           <div
             className="__thumb-bg-image"
             style={{
-              backgroundImage: `url(${video.imageUrl})`,
+              backgroundImage: `url(${video.meta_data.image_placeholder_url})`,
             }}
           ></div>
         </div>
         <div className="video-article_card__footer">
           <div className="__footer-header">
-            <h3>{video.title}</h3>
+            <h3>{video.title_name}</h3>
           </div>
         </div>
       </figure>

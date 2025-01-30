@@ -1,10 +1,29 @@
 "use client";
-import { artists } from "@/data/artists";
 import Link from "next/link";
 import Button from "../shared/Button";
 import ArtistCard from "./ArtistCard";
+import { useEffect, useState } from "react";
+import { getArtists } from "@/lib/data";
+import { IArtist } from "@/interfaces/artist.interface";
 
 const ArtistSection = () => {
+  const [artists, setArtists] = useState<IArtist[]>([]);
+
+  // get artist data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getArtists(1000);
+
+        setArtists(res?.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section className="mt-20 block">
       <div className="z-[3] pointer-events-none relative translate-y-[20px] lg:translate-y-[40px]">
@@ -13,7 +32,7 @@ const ArtistSection = () => {
         </h2>
       </div>
       <div className="w-full mx-auto flex flex-row flex-wrap relative">
-        {artists.map((artist, i) => (
+        {artists.slice(0, 12).map((artist, i) => (
           <ArtistCard key={i} artist={artist} index={i} />
         ))}
       </div>

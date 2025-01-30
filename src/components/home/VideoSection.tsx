@@ -1,19 +1,36 @@
 "use client";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { EffectFade, Navigation } from "swiper/modules";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import Button from "../shared/Button";
 
-import videoArticles from "@/data/video";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import CustomCursor, { CustomCursorRef } from "../shared/CustomCursor";
+import { IVideo } from "@/interfaces/video.interface";
+import { getVideos } from "@/lib/data";
 
 const VideoSection = () => {
   const swiperRef = useRef<SwiperRef | null>(null);
   const cursorRef = useRef<CustomCursorRef | null>(null);
+  const [videoArticles, setVideoArticles] = useState<IVideo[]>([])
+
+  // get video data
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const res = await getVideos();
+    
+            setVideoArticles(res?.data.data);
+          } catch (error) {
+            console.log(error);
+          }
+        };
+    
+        fetchData();
+      }, []);
 
   // Split articles into chunks of 5 for Swiper slides
   const chunkedArticles = [];
@@ -89,7 +106,7 @@ const VideoSection = () => {
                       <div className="video-article_card__thumb">
                         <div className="video-article_card__thumb-overlay">
                           <Link
-                            href={videoArticle.link}
+                            href={videoArticle.entity_featured_url}
                             target="_blank"
                             className="play-button"
                             title="Play Video"
@@ -100,13 +117,13 @@ const VideoSection = () => {
                         <div
                           className="__thumb-bg-image"
                           style={{
-                            backgroundImage: `url(${videoArticle.imageUrl})`,
+                            backgroundImage: `url(${videoArticle.meta_data.image_placeholder_url})`,
                           }}
                         ></div>
                       </div>
                       <div className="video-article_card__footer">
                         <div className="__footer-header">
-                          <h3>{videoArticle.title}</h3>
+                          <h3>{videoArticle.title_name}</h3>
                         </div>
                       </div>
                     </figure>
