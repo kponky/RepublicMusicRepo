@@ -1,4 +1,4 @@
-export interface IVideo {
+export interface ISlider {
   id: number;
   meta_key: string;
   meta_value: string;
@@ -6,8 +6,11 @@ export interface IVideo {
   description: string;
   entity_featured_url: string;
   meta_data: {
-    image_placeholder_url: string;
+    slider_button_url: string;
   };
+  owned_by: string | null;
+  added_by: string | null;
+  status: string | null;
   created_at: string;
   updated_at: string;
 }

@@ -1,6 +1,5 @@
-import { IVideo } from "@/interfaces/video.interface";
 
-const videoArticles: IVideo[] = [
+const videoArticles = [
   {
     id: 1,
     title: "Burna Boy - City Boys",
@@ -34,14 +33,14 @@ const videoArticles: IVideo[] = [
     title: "Taylor Swift - Cruel Summer (Live Version)",
     thumbnailUrl: "https://www.example.com/thumbnail5.jpg",
     link: "https://www.youtube.com/watch?v=example5",
-    imageUrl: "https://www.example.com/image5.jpg",
+    imageUrl: "https://img.youtube.com/vi/k8c6Re3EzZM/maxresdefault.jpg",
   },
   {
     id: 6,
     title: "Wizkid - Ghetto Love",
     thumbnailUrl: "https://www.example.com/thumbnail6.jpg",
     link: "https://www.youtube.com/watch?v=example6",
-    imageUrl: "https://www.example.com/image6.jpg",
+    imageUrl: "https://www.example.com/image5.jpg",
   },
   {
     id: 7,
