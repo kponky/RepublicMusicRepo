@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { banners } from "@/data/banners";
 import Button from "../shared/Button";
 import { motion } from "framer-motion";
 import {
@@ -9,11 +8,13 @@ import {
   subtitleVariants,
   titleVariants,
 } from "@/utils/animationVariants";
+import { getSliders } from "@/lib/data";
+import { ISlider } from "@/interfaces/slider.interface";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = banners.length;
   const [isMobile, setIsMobile] = useState(false);
+  const [sliders, setSliders] = useState<ISlider[]>([]);
 
   // Detect screen size to determine layout
   useEffect(() => {
@@ -26,16 +27,32 @@ const Hero = () => {
 
   // Automatically change slides every 5 seconds
   useEffect(() => {
+    if (sliders.length === 0) return;
+
     const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+      setCurrentSlide((prev) => (prev + 1) % sliders.length);
     }, 10000);
 
     return () => clearInterval(slideInterval); // Clear interval on unmount
-  }, [totalSlides]);
+  }, [sliders.length]);
 
   const handleBulletClick = (index: number) => {
     setCurrentSlide(index);
   };
+
+  // get slider data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await getSliders();
+        setSliders(res?.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section className="min-h-dvh lg:fixed top-0 left-0 h-full w-full bg-black overflow-hidden ">
@@ -49,7 +66,7 @@ const Hero = () => {
             : `translateY(-${currentSlide * 100}vh)`,
         }}
       >
-        {banners.map((item, index) => (
+        {sliders.map((item, index) => (
           <div
             key={index}
             className="w-full h-full shrink-0 flex-none relative"
@@ -57,7 +74,7 @@ const Hero = () => {
             <div className="banner_bg h-screen">
               <div
                 className="single__banner"
-                style={{ backgroundImage: `url(${item.imageUrl})` }}
+                style={{ backgroundImage: `url(${item.entity_featured_url})` }}
               ></div>
             </div>
 
@@ -71,7 +88,7 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.5 }}
                     className="lg:text-[145px] text-[54px] lowercase leading-[0.9] -tracking-wider"
                   >
-                    {item.title}
+                    {item.title_name}
                   </motion.h3>
                   <motion.p
                     variants={subtitleVariants}
@@ -80,10 +97,14 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 1 }}
                     className="w-[80%] text-base leading-6"
                   >
-                    {item.subtitle}
+                    {item.description}
                   </motion.p>
                   <div className="flex">
-                    <Link href={item.link} className="ml-auto mt-[30px]">
+                    <Link
+                      href={item.meta_data.slider_button_url}
+                      className="ml-auto mt-[30px]"
+                      target="_blank"
+                    >
                       <motion.div
                         variants={buttonVariants}
                         initial="hidden"
@@ -103,7 +124,7 @@ const Hero = () => {
       {/* Custom Pagination */}
       <div className="absolute bottom-10 right-10 flex z-[1] w-full">
         <ul className="ml-auto bg-transparent text-center">
-          {banners.map((_, index) => (
+          {sliders.map((_, index) => (
             <li key={index} className="relative inline-block w-auto m-[5px]">
               <button
                 key={index}
