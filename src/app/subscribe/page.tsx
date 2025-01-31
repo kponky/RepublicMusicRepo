@@ -1,11 +1,10 @@
-import ArtistsGrid from "@/components/artists/ArtistsGrid";
-import Footer from "@/components/shared/Footer";
-import React from "react";
+import Loading from "../loading";
 
 const SubscribePage = () => {
   return (
-    <div className="w-full min-h-screen bg-black">
-      <div className="py-[10px]"></div>
+    <div className="w-full bg-black text-white">
+      <div className="py-[10px]">
+      </div>
     </div>
   );
 };

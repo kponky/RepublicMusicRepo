@@ -4,13 +4,13 @@ import {
   FaGlobe,
   FaInstagram,
   FaSpotify,
-  FaTwitter,
-  FaYoutube,
+  FaYoutube
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const socialIcons: { [key: string]: JSX.Element } = {
   instagram_url: <FaInstagram size={20} />,
-  x_url: <FaTwitter size={20} />, // Assuming X (Twitter)
+  x_url: <FaXTwitter size={20} />, // Assuming X (Twitter)
   youtube_url: <FaYoutube size={20} />,
   spotify_url: <FaSpotify size={20} />,
   facebook_url: <FaFacebook size={20} />,

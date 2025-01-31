@@ -1,6 +1,6 @@
+import { countriesList } from "@/data/countries";
+import { ISiteInfo } from "@/interfaces/app.interface";
 import Link from "next/link";
-import React from "react";
-import Button from "./Button";
 import {
   FaInstagram,
   FaSpotify,
@@ -8,10 +8,24 @@ import {
   FaTumblr,
   FaYoutube,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { countriesList } from "@/data/countries";
+import { FaFacebook, FaXTwitter } from "react-icons/fa6";
+import Button from "./Button";
 
-const Footer = () => {
+interface FooterProps {
+  siteInformation: ISiteInfo;
+}
+
+const socialIcons: { [key: string]: JSX.Element } = {
+  tumbr_url: <FaTumblr size={20} />,
+  youtube_url: <FaYoutube size={20} />,
+  instagram_url: <FaInstagram size={20} />,
+  x_url: <FaXTwitter size={20} />,
+  facebook_url: <FaFacebook size={20} />,
+  tiktok_url: <FaTiktok size={20} />,
+  spotify_url: <FaSpotify size={20} />,
+};
+
+const Footer = ({ siteInformation: site }: FooterProps) => {
   return (
     <footer className="relative z-[1] bg-black main-footer overflow-hidden">
       <div className="flex flex-col justify-end relative z-[1] h-full">
@@ -95,11 +109,22 @@ const Footer = () => {
                       Emails will be sent by or on behalf of Universal Music
                       Group 2220 Colorado Avenue, Santa Monica, CA 90404 (310)
                       865-4000. You may withdraw your consent at any time{" "}
-                      <Link href="/" className="text-primary" target="_blank">
+                      <Link
+                        href={site?.meta_data?.privacy_policy_url}
+                        className="text-primary"
+                        target="_blank"
+                      >
                         Privacy Policy
                       </Link>
                       <span className="mx-1">/</span>
-                      <Link href="/" className="text-primary" target="_blank">
+                      <Link
+                        href={
+                          site?.meta_data
+                            ?.do_not_sell_my_personal_information_url
+                        }
+                        className="text-primary"
+                        target="_blank"
+                      >
                         Do Not Sell My Personal Information
                       </Link>
                     </p>
@@ -177,21 +202,32 @@ const Footer = () => {
               <ul className="flex flex-col items-center lg:items-start border-t border-white pt-[30px] mt-[.25rem] mb-1 text-white text-[.756rem] font-semibold">
                 <li className="mb-[.25rem]">
                   <Link href="/" className="text-white transition">
-                    Ⓒ Republic Records
+                    Ⓒ {site?.title_name}
                   </Link>
                 </li>
                 <li className="mb-[.25rem]">
-                  <Link href="/" className="text-white transition">
+                  <Link
+                    href={site?.meta_data?.privacy_policy_url}
+                    className="text-white transition"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-[.25rem]">
-                  <Link href="/" className="text-white transition">
+                  <Link
+                    href={site?.meta_data?.terms_and_conditions_url}
+                    className="text-white transition"
+                  >
                     Terms & Conditions
                   </Link>
                 </li>
                 <li className="mb-[.25rem] mr-4">
-                  <Link href="/" className="text-white transition">
+                  <Link
+                    href={
+                      site?.meta_data?.do_not_sell_my_personal_information_url
+                    }
+                    className="text-white transition"
+                  >
                     Do Not Sell My Personal Information
                   </Link>
                 </li>
@@ -200,69 +236,24 @@ const Footer = () => {
 
             {/* social icons */}
             <ul className="flex items-center text-white mt-5 gap-3 lg:gap-2">
-              <li className=" transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://www.youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaYoutube size={22} />
-                </Link>
-              </li>
-              <li className=" transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaInstagram size={22} />
-                </Link>
-              </li>
-              <li className=" transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaXTwitter size={22} />
-                </Link>
-              </li>
-              <li className=" transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://www.spotify.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaSpotify size={22} />
-                </Link>
-              </li>
-              <li className="transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://www.tiktok.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTiktok size={22} />
-                </Link>
-              </li>
-              <li className="transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://www.tumblr.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTumblr size={22} />
-                </Link>
-              </li>
-              <li className=" transition-opacity duration-300 hover:opacity-75">
-                <Link
-                  href="https://www.spotify.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaSpotify size={22} />
-                </Link>
-              </li>
+              {site?.meta_data &&
+                Object.entries(site?.meta_data).map(([key, url]) => {
+                  if (socialIcons[key] && url) {
+                    return (
+                      <li className=" transition-opacity duration-300 hover:opacity-75">
+                        <Link
+                          key={key}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {socialIcons[key]}
+                        </Link>
+                      </li>
+                    );
+                  }
+                  return null;
+                })}
             </ul>
           </div>
         </div>

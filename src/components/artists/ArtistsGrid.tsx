@@ -1,26 +1,16 @@
-"use client"
-import React, { useEffect, useState } from "react";
+"use client";
+import { useAppStore } from "@/store/appStore";
+import { useEffect } from "react";
 import ArtistCard from "../home/ArtistCard";
-import { IArtist } from "@/interfaces/artist.interface";
-import { getArtists } from "@/lib/data";
 
 const ArtistsGrid = () => {
-  const [artists, setArtists] = useState<IArtist[]>([]);
+  const { artists, fetchArtists } = useAppStore();
 
   // get artist data
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const res = await getArtists(1000);
-  
-          setArtists(res?.data.data);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-  
-      fetchData();
-    }, []);
+  useEffect(() => {
+    fetchArtists(1000);
+  }, []);
+
   return (
     <div className="w-full mx-auto flex flex-row flex-wrap relative">
       {artists.map((artist, i) => (

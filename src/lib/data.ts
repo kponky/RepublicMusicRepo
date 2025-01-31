@@ -1,4 +1,3 @@
-import { IArtist } from "@/interfaces/artist.interface";
 import { axiosInstance } from "./axios";
 
 export async function getMembership(value: string) {
@@ -54,6 +53,17 @@ export async function getVideos(perPage: number = 10, page: number = 1) {
       `/nellalink/smart-meta-manager/entity/videos?per_page=${perPage}&page=${page}&sort_by=id&sort_order=desc`
     );
 
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getSiteInformation() {
+  try {
+    const res = await axiosInstance.get(
+      `/nellalink/smart-meta-manager/entity/sitewide/1`
+    );
     return res;
   } catch (error) {
     console.log(error);

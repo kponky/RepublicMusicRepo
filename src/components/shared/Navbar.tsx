@@ -1,7 +1,8 @@
 "use client";
 
+import { ISiteInfo } from "@/interfaces/app.interface";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 interface Menu {
@@ -9,7 +10,11 @@ interface Menu {
   to: string;
 }
 
-const Navbar = () => {
+interface NavbarProps {
+  siteInformation: ISiteInfo;
+}
+
+const Navbar = ({ siteInformation: site }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,7 +63,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-white font-bold text-3xl">
-            republic Records
+            {site?.title_name}
           </Link>
 
           <div className="md:hidden">
@@ -82,6 +87,7 @@ const Navbar = () => {
                 <Link
                   href={to}
                   className="text-primary hover:text-white transition text-2xl font-bold mx-4"
+                  onClick={() => setMenuOpen(false)}
                 >
                   {name}
                 </Link>
