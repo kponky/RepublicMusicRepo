@@ -106,9 +106,7 @@ const Footer = ({ siteInformation: site }: FooterProps) => {
 
                   <div className="mt-5 mb-2 text-center lg:text-left">
                     <p className="text-white font-bold text-sm leading-[1.3] ">
-                      Emails will be sent by or on behalf of Universal Music
-                      Group 2220 Colorado Avenue, Santa Monica, CA 90404 (310)
-                      865-4000. You may withdraw your consent at any time{" "}
+                      {site?.meta_data?.contact_form_message}{" "}
                       <Link
                         href={site?.meta_data?.privacy_policy_url}
                         className="text-primary"
