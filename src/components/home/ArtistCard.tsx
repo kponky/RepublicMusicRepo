@@ -2,18 +2,19 @@ import { IArtist } from "@/interfaces/artist.interface";
 import { fadeInUp } from "@/utils/animationVariants";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   FaFacebook,
   FaGlobe,
   FaInstagram,
   FaSpotify,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const socialIcons: { [key: string]: JSX.Element } = {
   instagram_url: <FaInstagram size={20} />,
-  x_url: <FaTwitter size={20} />, // Assuming X (Twitter)
+  x_url: <FaXTwitter size={20} />,
   youtube_url: <FaYoutube size={20} />,
   spotify_url: <FaSpotify size={20} />,
   facebook_url: <FaFacebook size={20} />,
@@ -21,10 +22,16 @@ const socialIcons: { [key: string]: JSX.Element } = {
 };
 
 const ArtistCard = ({ artist, index }: { artist: IArtist; index: number }) => {
+  const pathname = usePathname();
+  const isOnArtistPage = pathname.includes("/artists");
+
+  // Disable animation on the "/artists" path
+  const motionVariants = isOnArtistPage ? {} : fadeInUp;
+
   return (
     <motion.div
       className="artist-card lg:w-1/4 w-1/2 relative group"
-      variants={fadeInUp}
+      variants={motionVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.2 }}

@@ -1,30 +1,19 @@
-"use client"
-import { IVideo } from "@/interfaces/video.interface";
-import { getVideos } from "@/lib/data";
-import { useEffect, useState } from "react";
+"use client";
+import { useAppStore } from "@/store/appStore";
+import { useEffect } from "react";
 import VideoCard from "./VideoCard";
 
 const VideosGrid = () => {
-  const [videoArticles, setVideoArticles] = useState<IVideo[]>([]);
+  const { videos, fetchVideos } = useAppStore();
 
   // get video data
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getVideos(1000);
-
-        setVideoArticles(res?.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
+    fetchVideos(1000);
   }, []);
 
   return (
     <div className="w-full mx-auto flex flex-row flex-wrap relative">
-      {videoArticles.map((video, i) => (
+      {videos.map((video, i) => (
         <VideoCard key={i} video={video} />
       ))}
     </div>

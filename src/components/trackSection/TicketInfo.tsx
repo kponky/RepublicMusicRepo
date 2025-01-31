@@ -1,45 +1,16 @@
 "use client";
-import { ITicket } from "@/interfaces/track.interface";
-import { getMembership } from "@/lib/data";
+import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useTicketStore } from "@/store/ticketStore";
 
 const TicketInfo = () => {
   const searchParams = useSearchParams();
   const ticketId = searchParams.get("ticketId");
-  const [membershipData, setMembershipData] = useState<ITicket | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [errorMsg, setErrorMsg] = useState("");
+  const { membershipData, loading, errorMsg, setTicketId } = useTicketStore();
 
   useEffect(() => {
-    const fetchDetails = async () => {
-      if (!ticketId) {
-        setMembershipData(null);
-        setLoading(false);
-        return;
-      }
-
-      setLoading(true);
-      try {
-        const res = await getMembership(ticketId);
-        if (res && res.data) {
-          setMembershipData(res.data.data);
-          setErrorMsg("");
-        } else {
-          setMembershipData(null);
-          setErrorMsg("Invalid ticket or membership ID.");
-        }
-      } catch (err) {
-        console.error(err);
-        setErrorMsg("An error occurred while fetching ticket details.");
-        setMembershipData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDetails();
-  }, [searchParams]);
+    setTicketId(ticketId);
+  }, [ticketId, setTicketId]);
 
   if (ticketId && loading) {
     return (

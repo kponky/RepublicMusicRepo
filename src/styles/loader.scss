@@ -1,0 +1,28 @@
+@keyframes rotate {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+.circle {
+  @apply absolute border-[3px] border-transparent rounded-full border-t-primary;
+  animation: rotate linear infinite;
+}
+
+.circle.one {
+  @apply h-12 w-12 left-12 top-12;
+  animation-duration: 0.85s;
+}
+
+.circle.two {
+  @apply h-20 w-20 top-9 left-9;
+  animation-duration: 0.95s;
+}
+
+.circle.three {
+  @apply h-24 w-24 top-6 left-6;
+  animation-duration: 1.05s;
+}
