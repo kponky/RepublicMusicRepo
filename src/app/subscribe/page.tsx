@@ -1,4 +1,3 @@
-import Loading from "../loading";
 
 const SubscribePage = () => {
   return (
