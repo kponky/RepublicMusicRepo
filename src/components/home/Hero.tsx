@@ -79,7 +79,7 @@ const Hero = () => {
             </div>
 
             <div className="banner_fg">
-              <div className="max-w-[850px] ml-auto text-right w-full relative z-[1] text-white -top-8 lg:top-0">
+              <div className="max-w-[850px] ml-auto text-right w-full relative z-[1] text-white -top-14 lg:top-0">
                 <div>
                   <motion.h3
                     variants={titleVariants}
